@@ -1,0 +1,85 @@
+/* Estilos originales de Game Price */
+body {
+    background-color: #fbfbfb;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-brand { letter-spacing: 2px; }
+
+header.bg-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%) !important;
+}
+
+.card {
+    transition: transform 0.2s ease;
+    border-radius: 12px;
+}
+
+.card:hover { transform: translateY(-5px); }
+.list-group-item { padding: 1rem; }
+
+/* --- NUEVO: MODO OSCURO --- */
+body.modo-oscuro {
+    background-color: #121212 !important;
+    color: #e0e0e0;
+}
+
+body.modo-oscuro .card, 
+body.modo-oscuro .bg-light,
+body.modo-oscuro .list-group-item {
+    background-color: #1e1e1e !important;
+    color: white;
+    border-color: #333;
+}
+
+/* --- NUEVO: BOTONES SOCIALES (De tu ejemplo) --- */
+.social-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.social-buttons-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-btn-appear {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn-appear:hover { transform: scale(1.15) translateY(-2px); }
+
+.whatsapp-appear { background-color: #25D366; }
+.instagram-appear { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+/* Tooltips */
+.social-btn-appear::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 65px;
+    background: rgba(51, 51, 51, 0.9);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.social-btn-appear:hover::before { opacity: 1; }
